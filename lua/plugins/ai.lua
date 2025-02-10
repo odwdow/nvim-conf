@@ -12,9 +12,19 @@ return {
     "zbirenbaum/copilot-cmp",
     after = { "copilot.lua" },
     config = function()
-      require("copilot_cmp").setup()
+      require('copilot_cmp').setup()
     end
   },
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require('config.codecompanion')
+    end,
+  }
   -- {
   --   "tzachar/cmp-tabnine",
   --   build = "./install.sh",
