@@ -2,7 +2,7 @@ return {
   { "junegunn/fzf" },
   {
     "ibhagwan/fzf-lua",
-    requires = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { "echasnovski/mini.icons" },
     config = function()
       require('config.fzf')
     end,
