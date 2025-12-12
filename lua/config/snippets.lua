@@ -151,3 +151,14 @@ ls.add_snippets("typescriptreact", {
     t({ "", "}, []);" }),
   }),
 })
+
+ls.add_snippets("rust", {
+  s("debug!", {
+    t({ "tracing::debug!(\"{" }),
+    i(1),
+    t({ "}\", " }),
+    i(2),
+    t({ ");" }),
+    i(0),
+  }),
+})
