@@ -5,22 +5,8 @@ local cmp = require("cmp")
 local lspconfig = require('lspconfig')
 
 require('mason').setup()
-require('mason-lspconfig').setup_handlers({
-  function(server)
-    local opt = {
-      -- -- Function executed when the LSP server startup
-      -- on_attach = function(client, bufnr)
-      --   local opts = { noremap=true, silent=true }
-      --   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-      --   vim.cmd 'autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)'
-      -- end,
-      -- capabilities = require('cmp_nvim_lsp').default_capabilities(
-      --   vim.lsp.protocol.make_client_capabilities()
-      -- )
-    }
-    lspconfig[server].setup(opt)
-  end,
-})
+require('mason-lspconfig').setup {
+}
 
 -- gleam settings
 -- require('config.lsp.gleam')
@@ -94,7 +80,9 @@ cmp.setup({
     end, { 'i', 's' }),
     ['<C-l>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ["<CR>"] = cmp.mapping.confirm { select = true },
+    ["<CR>"] = cmp.mapping.confirm {
+      select = true,
+    },
   }),
   sorting = {
     priority_weight = 2,
