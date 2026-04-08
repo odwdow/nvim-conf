@@ -15,13 +15,17 @@ return {
       require('config.lsp')
     end,
   },
-  -- {
-  --   "nvimdev/guard.nvim",
-  --   dependencies = {
-  --     "nvimdev/guard-collection",
-  --   },
-  --   config = function()
-  --     require('config.guard')
-  --   end,
-  -- }
+  {
+    "j-hui/fidget.nvim",
+    opts = {
+      -- options
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    dependencies = {},
+    config = function()
+      require('config.conform')
+    end,
+  },
 }
