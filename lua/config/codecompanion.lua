@@ -80,18 +80,33 @@ codecompanion.setup({
     },
   },
   extensions = {
-    -- mcphub = {
-    --   callback = "mcphub.extensions.codecompanion",
-    --   opts = {
-    --     make_tools = true,
-    --     show_server_tools_in_chat = true,
-    --     add_mcp_prefix_to_tool_names = false,
-    --     show_result_in_chat = true,
-    --     format_tool = nil,
-    --     make_vars = false,
-    --     make_slash_commands = true,
-    --   }
-    -- }
+    mcphub = {
+      callback = "mcphub.extensions.codecompanion",
+      opts = {
+        make_tools = true,
+        show_server_tools_in_chat = true,
+        add_mcp_prefix_to_tool_names = false,
+        show_result_in_chat = true,
+        format_tool = nil,
+        make_vars = false,
+        make_slash_commands = true,
+      }
+    }
+  },
+  interactions = {
+    chat = {
+      opts = {
+        completion_provider = "cmp",
+      }
+    },
+    opts = {
+      triggers = {
+        acp_slash_commands = "\\",
+        editor_context = "#",
+        slash_commands = "/",
+        tools = "@",
+      },
+    },
   }
 })
 

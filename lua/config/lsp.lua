@@ -53,11 +53,11 @@ cmp.setup({
   },
   sources = {
     -- { name = "copilot",     group_index = 2 },
-    { name = "luasnip",     group_index = 2 },
-    { name = "cmp_tabnine", group_index = 2 },
-    { name = "nvim_lsp",    group_index = 2 },
-    { name = "buffer",      group_index = 2 },
-    { name = "path",        group_index = 2 },
+    { name = "luasnip" },
+    -- { name = "cmp_tabnine", group_index = 2 },
+    { name = "nvim_lsp" },
+    { name = "buffer" },
+    { name = "path" },
   },
   mapping = cmp.mapping.preset.insert({
     ['<Tab>'] = cmp.mapping(function(fallback)
