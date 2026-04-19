@@ -40,7 +40,7 @@ codecompanion.setup({
   strategies = {
     -- Change the default chat adapter
     chat = {
-      adapter = 'claude_code',
+      adapter = 'gemini_cli',
       keymaps = {
         close = {
           modes = { n = "<C-x>", i = "<C-x>" },
@@ -60,37 +60,22 @@ codecompanion.setup({
       },
     },
     inline = {
-      adapter = 'claude_code',
+      adapter = 'gemini',
     },
     cmd = {
-      adapter = 'claude_code',
+      adapter = 'gemini',
     },
   },
   adapters = {
     acp = {
-      claude_code = function()
-        local token = vim.fn.system("sops exec-env ~/.secret/claude.yaml 'echo $CLAUDE_CODE_OAUTH_TOKEN'")
-        token = vim.trim(token)
-
-        return require("codecompanion.adapters").extend("claude_code", {
-          env = {
-            CLAUDE_CODE_OAUTH_TOKEN = token,
+      gemini_cli = function()
+        return require("codecompanion.adapters").extend("gemini_cli", {
+          defaults = {
+            auth_method = "oauth-personal",
           },
         })
       end,
     },
-    http = {
-      gemma3n = function()
-        return require('codecompanion.adapters').extend('ollama', {
-          name = 'gemma3n', -- Give this adapter a different name to differentiate it from the default ollama adapter
-          schema = {
-            model = {
-              default = 'gemma3n:e2b',
-            },
-          },
-        })
-      end,
-    }
   },
   opts = {
     log_level = 'DEBUG',
