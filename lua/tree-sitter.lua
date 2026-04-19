@@ -1,3 +1,5 @@
+require('nvim-treesitter.install').prefer_git = true
+
 require('nvim-treesitter').setup {
   sync_install = true,
   auto_install = true,

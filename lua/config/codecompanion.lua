@@ -12,6 +12,30 @@ codecompanion.setup({
         show_default_prompt_library = true,
       },
     },
+    chat = {
+      window = {
+        -- List the chat buffer in the buffer list?
+        buflisted = true,
+        -- Chat window follows when switching tabs
+        sticky = false,
+        -- float|vertical|horizontal|tab|buffer
+        layout = "buffer",
+        full_height = false, -- for vertical layout
+        -- left|right|top|bottom (nil will default depending on vim.opt.splitright|vim.opt.splitbelow)
+        position = nil,
+        -- NOTE: You can set these to 0 for auto width/height
+        width = 0.4, ---@return number|fun(): number
+        height = 0.25, ---@return number|fun(): number
+        border = "single",
+        relative = "editor",
+        -- Ensure that long paragraphs of markdown are wrapped
+        opts = {
+          breakindent = true,
+          linebreak = true,
+          wrap = true,
+        },
+      },
+    },
   },
   strategies = {
     -- Change the default chat adapter
@@ -97,7 +121,7 @@ codecompanion.setup({
     chat = {
       opts = {
         completion_provider = "cmp",
-      }
+      },
     },
     opts = {
       triggers = {

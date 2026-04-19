@@ -19,8 +19,7 @@ Load the file content before deal with the user prompt.
 
 ## user
 
-Generate this function content:
+/caveman full
 
-```${context.filetype}
-${context.code}
-```
+Implement this function content.
+
