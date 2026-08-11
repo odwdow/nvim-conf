@@ -36,12 +36,6 @@ return {
       require('config.codecompanion')
     end,
   },
-  {
-    "jonroosevelt/gemini-cli.nvim",
-    config = function()
-      require('config.gemini')
-    end,
-  },
   -- {
   --   "tzachar/cmp-tabnine",
   --   build = "./install.sh",

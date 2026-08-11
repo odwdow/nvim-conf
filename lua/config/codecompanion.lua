@@ -40,7 +40,7 @@ codecompanion.setup({
   strategies = {
     -- Change the default chat adapter
     chat = {
-      adapter = 'gemini_cli',
+      adapter = 'codex',
       keymaps = {
         close = {
           modes = { n = "<C-x>", i = "<C-x>" },
@@ -48,30 +48,30 @@ codecompanion.setup({
         },
       },
       tools = {
-        ["mcp"] = {
-          callback = function()
-            return require("mcphub.extensions.codecompanion")
-          end,
-          opts = {
-            requires_approval = true,
-            temperature = 0.7
-          },
-        },
+        -- ["mcp"] = {
+        --   callback = function()
+        --     return require("mcphub.extensions.codecompanion")
+        --   end,
+        --   opts = {
+        --     requires_approval = true,
+        --     temperature = 0.7
+        --   },
+        -- },
       },
     },
     inline = {
-      adapter = 'gemini',
+      adapter = 'codex',
     },
     cmd = {
-      adapter = 'gemini',
+      adapter = 'codex',
     },
   },
   adapters = {
     acp = {
-      gemini_cli = function()
-        return require("codecompanion.adapters").extend("gemini_cli", {
+      codex = function()
+        return require("codecompanion.adapters").extend("codex", {
           defaults = {
-            auth_method = "oauth-personal",
+            auth_method = "chatgpt",
           },
         })
       end,
